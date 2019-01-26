@@ -1,0 +1,27 @@
+/**
+* Theme Name: themespry
+* Theme URI: http://themespry.com/
+* Description: Themespry is a powerful and modern multipurpose responsive WordPress Theme.
+* Version: 1.0
+* Author: Themespry
+* Author URI: http://themespry.com
+* License: GNU General Public License version 3.0
+* License URI: http://www.gnu.org/licenses/gpl-3.0.html
+* Tags: one-column, right-sidebar, left-sidebar, custom-menu, featured-images, post-formats, sticky-post, translation-ready
+* Text Domain: themespry
+*
+*/
+
+
+/**
+* Footer Copyright
+*===================================================================*/
+.footer-area{}
+.footer-bottom{
+    background-color: #444444;
+    padding: 30px;
+}
+.footer-bottom p{
+    margin: 0;
+    color: #FFFFFF;
+}
