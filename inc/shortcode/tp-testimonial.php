@@ -216,9 +216,9 @@ class TP_Testimonial_Widget extends Widget_Base {
                                         </div>
                                         <div class="review-txt">
                                             <?php if( !empty($testimonial['review']) ) : ?>
-                                                <span>“</span>
+                                                <span>&ldquo;</span>
                                                 <p><?php echo esc_html( $testimonial['review'] ); ?></p>
-                                                <span>”</span>
+                                                <span>&rdquo;</span>
                                             <?php endif; ?>
                                         </div>
 

@@ -11,7 +11,7 @@ class TP_Partner_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Themespry Logo Carousel', 'strata' );
+        return esc_html__( 'Strata Logo Carousel', 'strata' );
     }
 
     public function get_icon() {
@@ -27,7 +27,7 @@ class TP_Partner_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_tab',
             [
-                'label' => esc_html__('Themespry Logo Carousel', 'strata'),
+                'label' => esc_html__('Strata Logo Carousel', 'strata'),
             ]
         );
 

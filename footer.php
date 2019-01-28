@@ -24,7 +24,7 @@ if ( defined( 'FW' ) ){
                         <ul class="f-address">
                             <li><i class="fa fa-map-marker" aria-hidden="true"></i> 25/1 London road, Brighum,London</li>
                             <li><i class="fa fa-phone"></i> +1-1459-236-756</li>
-                            <li><i class="fa fa-envelope" aria-hidden="true"></i>  admin@themespry.com</li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i>  admin@strata.com</li>
                         </ul>
                     </div>
                 </div>
@@ -96,8 +96,11 @@ if ( defined( 'FW' ) ){
                 <div class="copyright-text">
                     <?php if ( !empty( $copyright ) ): ?>
                         <div class="copyright-info"><?php echo wp_kses_post( $copyright ); ?></div>
-                    <?php else: ?>
-                    <p>© Copyright 2018. All Rights Reserved. Designed by <a href="http://themespry.com">ThemesPry</a></p>
+                    <?php
+                        else:
+                        $url = 'http://themespry.com';
+                        ?>
+                    <p>&copy; <?php echo esc_html__( 'Copyright 2018. All Rights Reserved. Designed by', 'strata' ); ?> <a href="<?php echo esc_url( $url ); ?>">ThemesPry</a></p>
                     <?php endif; ?>
 
                 </div>

@@ -11,7 +11,7 @@ class TP_Small_Box_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Strata Box', 'geobin' );
+        return esc_html__( 'Strata Box', 'strata' );
     }
 
     public function get_icon() {
@@ -57,7 +57,7 @@ class TP_Small_Box_Widget extends Widget_Base {
                 'label'         => __( 'Sub Title', 'strata' ),
                 'type'          => Controls_Manager::TEXTAREA,
                 'label_block'   => true,
-                'default'       => __( 'admin@themespry.com', 'strata' ),
+                'default'       => __( 'admin@strata.com', 'strata' ),
             ]
         );
 
@@ -71,7 +71,7 @@ class TP_Small_Box_Widget extends Widget_Base {
         $this->start_controls_section(
 			'section_title_tab',
 			[
-				'label' => esc_html__( 'Title', 'geobin' ),
+				'label' => esc_html__( 'Title', 'strata' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -79,7 +79,7 @@ class TP_Small_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__( 'Title Color', 'geobin' ),
+				'label' => esc_html__( 'Title Color', 'strata' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -93,7 +93,7 @@ class TP_Small_Box_Widget extends Widget_Base {
         $this->add_control(
             'title_hover_color',
             [
-                'label' => esc_html__( 'Title Hover Color', 'geobin' ),
+                'label' => esc_html__( 'Title Hover Color', 'strata' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -106,7 +106,7 @@ class TP_Small_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => esc_html__( 'Typography', 'geobin' ),
+				'label' => esc_html__( 'Typography', 'strata' ),
 				'selectors' => '{{WRAPPER}} .features-box h3, .tw-service-features-box h3',
 			]
 		);
@@ -123,7 +123,7 @@ class TP_Small_Box_Widget extends Widget_Base {
         $this->start_controls_section(
 			'section_sub_title_tab',
 			[
-				'label' => esc_html__( 'Sub Title', 'geobin' ),
+				'label' => esc_html__( 'Sub Title', 'strata' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -131,7 +131,7 @@ class TP_Small_Box_Widget extends Widget_Base {
 		$this->add_control(
 			'sub_title_color',
 			[
-				'label' => esc_html__( 'Color', 'geobin' ),
+				'label' => esc_html__( 'Color', 'strata' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
@@ -144,7 +144,7 @@ class TP_Small_Box_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'sub_title_typography',
-				'label' => esc_html__( 'Typography', 'geobin' ),
+				'label' => esc_html__( 'Typography', 'strata' ),
 				'selector' => '{{WRAPPER}} .features-box p',
 			]
 		);

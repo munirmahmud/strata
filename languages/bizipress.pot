@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: themespry\n"
+"Project-Id-Version: strata\n"
 "POT-Creation-Date: 2018-03-09 17:45+0600\n"
 "PO-Revision-Date: 2018-03-09 17:45+0600\n"
 "Last-Translator: \n"
@@ -567,7 +567,7 @@ msgstr ""
 msgid ""
 "you can use this options to add a class and further style the shortcode by "
 "adding your custom CSS in the style.css file. This file is located on your "
-"server in the /themespry-child/style.css"
+"server in the /strata-child/style.css"
 msgstr ""
 
 #: framework-customizations/extensions/shortcodes/shortcodes/call-to-action/config.php:7
@@ -1519,7 +1519,7 @@ msgstr ""
 msgid ""
 "You can use this options to add a class and further style the shortcode by "
 "adding your custom CSS in the style.css file. This file is located on your "
-"server in the /themespry-child/style.css"
+"server in the /strata-child/style.css"
 msgstr ""
 
 #: framework-customizations/extensions/shortcodes/shortcodes/column/options.php:1018
@@ -1535,7 +1535,7 @@ msgstr ""
 msgid ""
 "You can use this options to add a Css ID and further style the shortcode by "
 "adding your custom CSS in the style.css file. This file is located on your "
-"server in the /themespry-child/style.css"
+"server in the /strata-child/style.css"
 msgstr ""
 
 #: framework-customizations/extensions/shortcodes/shortcodes/contact-info/config.php:9
@@ -3352,7 +3352,7 @@ msgid "Strata"
 msgstr ""
 
 #: framework-customizations/theme/manifest.php:11
-msgid "themespry WordPress theme"
+msgid "strata WordPress theme"
 msgstr ""
 
 #: framework-customizations/theme/options/options/blog-settings.php:9
@@ -4770,7 +4770,7 @@ msgid "It looks like nothing was found here. Maybe try a search?"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "themespry"
+msgid "strata"
 msgstr ""
 
 #. Theme URI of the plugin/theme

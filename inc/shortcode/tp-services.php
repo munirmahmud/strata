@@ -63,7 +63,7 @@ class TP_Services_Widget extends Widget_Base {
                 'label' => __( 'URL', 'strata' ),
                 'type' => Controls_Manager::URL,
                 'default' => [
-                    'url' => 'http://themespry.com',
+                    'url' => 'http://strata.com',
                     'is_external' => '',
                 ],
                 'show_external' => true, // Show the 'open in new tab' button.

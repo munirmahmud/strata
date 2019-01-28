@@ -140,9 +140,9 @@ function themespry_action_tp_hook_css() {
 		. "$custom_css";
 
 
-		wp_add_inline_style( 'themespry-style', $output );
+		wp_add_inline_style( 'strata-style', $output );
 	}
-	wp_add_inline_script( 'themespry-form-helpers', 'var adminAjax = "' . admin_url( 'admin-ajax.php' ) . '"' );
+	wp_add_inline_script( 'strata-form-helpers', 'var adminAjax = "' . admin_url( 'admin-ajax.php' ) . '"' );
 }
 
 add_action( 'wp_enqueue_scripts', 'themespry_action_tp_hook_css', 90 );

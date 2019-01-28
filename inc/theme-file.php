@@ -33,7 +33,7 @@ if ( !is_admin() ) {
 	wp_enqueue_style( 'responsive', STRATA_CSS . '/responsive.css', microtime(), STRATA_VERSION );
 
     // Theme stylesheet.
-    wp_enqueue_style( 'themespry-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'strata-style', get_stylesheet_uri() );
 
 }
 

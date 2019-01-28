@@ -13,7 +13,7 @@ class TP_Post_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Themespry Post', 'strata' );
+        return esc_html__( 'Strata Post', 'strata' );
     }
 
     public function get_icon() {

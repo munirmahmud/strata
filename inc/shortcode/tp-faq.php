@@ -11,7 +11,7 @@ class TP_Faq_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Themespry Faq', 'strata' );
+        return esc_html__( 'Strata Faq', 'strata' );
     }
 
     public function get_icon() {
@@ -26,7 +26,7 @@ class TP_Faq_Widget extends Widget_Base {
         $this->start_controls_section(
             'section_tab',
             [
-                'label' => esc_html__('Themespry Accordion', 'strata'),
+                'label' => esc_html__('Strata Accordion', 'strata'),
             ]
         );
 

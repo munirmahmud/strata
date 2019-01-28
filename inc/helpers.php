@@ -612,7 +612,7 @@ function tp_category_list( $cat ){
     );
 
     $categories = get_categories( $query_args );
-    $options = array( esc_html__('0', 'geobin') => 'All Category');
+    $options = array( esc_html__('0', 'strata') => 'All Category');
     if(is_array($categories) && count($categories) > 0){
         foreach ($categories as $cat){
             $options[$cat->term_id] = $cat->name;

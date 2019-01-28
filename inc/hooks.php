@@ -80,10 +80,10 @@ function _action_themespry_register_required_plugins() {
 			'required'	 => true,
 		),
 		array(
-			'name'		 => __( 'Themespry Features', 'strata' ),
-			'slug'		 => 'themespry-features',
+			'name'		 => __( 'Strata Features', 'strata' ),
+			'slug'		 => 'strata-features',
 			'required'	 => true,
-			'source'	 => STRATA_INC . '/includes/plugins/themespry-features.zip',
+			'source'	 => STRATA_INC . '/includes/plugins/strata-features.zip',
 		),
 		array(
 			'name'		 => __( 'MailChimp for WordPress', 'strata' ),
@@ -96,7 +96,7 @@ function _action_themespry_register_required_plugins() {
 	$config = array(
 		'id'			 => 'strata', // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path'	 => '', // Default absolute path to bundled plugins.
-		'menu'			 => 'themespry-install-plugins', // Menu slug.
+		'menu'			 => 'strata-install-plugins', // Menu slug.
 		'parent_slug'	 => 'themes.php', // Parent menu slug.
 		'capability'	 => 'edit_theme_options', // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
 		'has_notices'	 => true, // Show admin notices or not.
@@ -113,7 +113,7 @@ add_action( 'tgmpa_register', '_action_themespry_register_required_plugins' );
 
 // Initializing online demo contents
 function _filter_themespry_fw_ext_backups_demos( $demos ) {
-	$demo_content_installer	 = 'http://xpeedstudio.net/demo-content/themespry';
+	$demo_content_installer	 = 'http://xpeedstudio.net/demo-content/strata';
 	$demos_array			 = array(
 		'multipage-rev' => array(
 			'title'			 => esc_html__( 'Demo', 'strata' ),
@@ -211,7 +211,7 @@ if ( !function_exists( 'seopress_action_shortcode_special_heading_enqueue_dynami
 		if ( empty( $custom_heading_styles ) ) {
 			return;
 		}
-		wp_add_inline_style( 'themespry-style', $custom_heading_styles );
+		wp_add_inline_style( 'strata-style', $custom_heading_styles );
 	}
 
 	add_action( 'fw_ext_shortcodes_enqueue_static:special_heading', 'seopress_action_shortcode_special_heading_enqueue_dynamic_css' );
@@ -425,7 +425,7 @@ if ( !function_exists( 'themespry_action_shortcode_column_enqueue_dynamic_css' )
 		}
 
 		wp_add_inline_style(
-		'themespry-style', $custom_column_styles
+		'strata-style', $custom_column_styles
 		);
 	}
 
@@ -551,7 +551,7 @@ if ( !function_exists( 'themespry_action_shortcode_section_enqueue_dynamic_css' 
 
 
 		wp_add_inline_style(
-		'themespry-style', $custom_section_styles
+		'strata-style', $custom_section_styles
 		);
 	}
 
@@ -601,7 +601,7 @@ if ( !function_exists( 'themespry_action_shortcode_space_enqueue_dynamic_css' ) 
 		if ( empty( $custom_space_styles ) ) {
 			return;
 		}
-		wp_add_inline_style( 'themespry-style', $custom_space_styles );
+		wp_add_inline_style( 'strata-style', $custom_space_styles );
 	}
 
 	add_action( 'fw_ext_shortcodes_enqueue_static:space', 'themespry_action_shortcode_space_enqueue_dynamic_css' );

@@ -10,7 +10,7 @@ class Strata_social extends WP_Widget {
 	function __construct() {
 		$widget_opt = array(
 			'classname'		 => 'themespry_widget',
-			'description'	 => 'themespry Social'
+			'description'	 => 'strata Social'
 		);
 
 		parent::__construct( 'tp-social', esc_html__( 'Strata Social', 'strata' ), $widget_opt );
@@ -104,7 +104,7 @@ class Strata_social extends WP_Widget {
 		}
 		?>
 		<div class="footer-social">
-			<ul class="tp-social-list tp-social-list-v6 themespry-social-list">
+			<ul class="tp-social-list tp-social-list-v6 strata-social-list">
 
 		<?php if ( $facebook != '' ): ?>
 					<li><a href="<?php echo esc_url( $facebook ); ?>"><i class="fa fa-facebook"></i></a></li>

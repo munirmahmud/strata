@@ -7,7 +7,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Themespry
+ * @subpackage Strata
  * @since 1.0
  * @version 1.0
  */

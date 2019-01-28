@@ -7,7 +7,7 @@
 
             var widgets = {
                 'tp-map.default': Strata.Map,
-                //'xs-slider.default': Geobin.Slider,
+                //'tp-slider.default': Geobin.Slider,
             };
 
             $.each( widgets, function ( widget, callback ) {

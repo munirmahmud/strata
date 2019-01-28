@@ -21,13 +21,13 @@ get_header(); ?>
             <div class="col-md-7">
                 <div class="error-page-content">
                     <h3><?php esc_html_e('The page you are looking for does not exist.', 'strata') ?></h3>
-                    <p><?php esc_html_e('We’re sorry but we can’t seem to find the page you requested. This might be because you have typed the web address incorrectly.', 'strata') ?></p>
+                    <p><?php esc_html_e('We are sorry but we can not seem to find the page you requested. This might be because you have typed the web address incorrectly.', 'strata') ?></p>
                     <a class="btn btn-default btn-style hvr-shutter-out-vertical" href="<?php echo esc_url(home_url()) ?>"><?php esc_html_e('Go to Home', 'strata') ?></a>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="error-text text-center">
-                    <h2><?php esc_html_e('404', 'strata') ?></h2>
+                    <h2><?php esc_html_e( '404', 'strata' ); ?></h2>
                     <span><?php _e( 'Oops!', 'strata' ); ?> <i class="fa fa-meh-o" aria-hidden="true"></i></span>
                 </div>
             </div>
