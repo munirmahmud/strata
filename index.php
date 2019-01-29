@@ -33,7 +33,7 @@ get_template_part( 'template-parts/header/content', 'blog-header' );
 
                             <?php endwhile; ?>
 
-                            <?php themespry_paging_nav(); ?>
+                            <?php strata_paging_nav(); ?>
 
                         <?php else : ?>
 

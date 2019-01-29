@@ -47,7 +47,7 @@ if ( post_password_required() ) {
 			
 			wp_list_comments( array(
                 'reply_text'        => '<i class="fa fa-mail-reply-all"></i> Reply',
-				'callback'          => 'themespry_tp_comment_style',
+				'callback'          => 'strata_tp_comment_style',
 				'style'			    => 'ul',
 				'short_ping'	    => false,
 				'type'              => 'all',

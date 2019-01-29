@@ -47,7 +47,7 @@ get_template_part( 'template-parts/header/content', 'blog-header' );
 						get_template_part( 'template-parts/post/content', get_post_format() );
 					endwhile;
 
-					themespry_paging_nav();
+					strata_paging_nav();
 				else :
 					get_template_part( 'template-parts/post/content', 'none' );
 				endif;

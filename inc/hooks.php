@@ -7,9 +7,9 @@ if ( !defined( 'ABSPATH' ) )
 /*
  * Widget register
  */
-if ( !function_exists( 'themespry_widget_init' ) ) {
+if ( !function_exists( 'strata_widget_init' ) ) {
 
-	function themespry_widget_init() {
+	function strata_widget_init() {
 		if ( function_exists( 'register_sidebar' ) ) {
 
 			register_sidebar( array(
@@ -56,7 +56,7 @@ if ( !function_exists( 'themespry_widget_init' ) ) {
 		}
 	}
 
-	add_action( 'widgets_init', 'themespry_widget_init' );
+	add_action( 'widgets_init', 'strata_widget_init' );
 }
 
 
@@ -67,7 +67,7 @@ if ( !function_exists( 'themespry_widget_init' ) ) {
  */
 
 /** @internal */
-function _action_themespry_register_required_plugins() {
+function _action_strata_register_required_plugins() {
 	$plugins = array(
 		array(
 			'name'		 => __( 'Unyson', 'strata' ),
@@ -109,10 +109,10 @@ function _action_themespry_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
-add_action( 'tgmpa_register', '_action_themespry_register_required_plugins' );
+add_action( 'tgmpa_register', '_action_strata_register_required_plugins' );
 
 // Initializing online demo contents
-function _filter_themespry_fw_ext_backups_demos( $demos ) {
+function _filter_strata_fw_ext_backups_demos( $demos ) {
 	$demo_content_installer	 = 'http://xpeedstudio.net/demo-content/strata';
 	$demos_array			 = array(
 		'multipage-rev' => array(
@@ -136,7 +136,7 @@ function _filter_themespry_fw_ext_backups_demos( $demos ) {
 	return $demos;
 }
 
-//add_filter( 'fw:ext:backups-demo:demos', '_filter_themespry_fw_ext_backups_demos' );
+//add_filter( 'fw:ext:backups-demo:demos', '_filter_strata_fw_ext_backups_demos' );
 
 
 
@@ -146,7 +146,7 @@ function _filter_themespry_fw_ext_backups_demos( $demos ) {
  *
  */
 
-function themespry_filter_theme_typography_custom_fonts( $fonts ) {
+function strata_filter_theme_typography_custom_fonts( $fonts ) {
 
 	$gilroy			 = array(
 		'family' => 'gilroylight'
@@ -158,7 +158,7 @@ function themespry_filter_theme_typography_custom_fonts( $fonts ) {
 	return $fonts;
 }
 
-add_filter( 'fw_option_type_typography_v2_standard_fonts', 'themespry_filter_theme_typography_custom_fonts' );
+add_filter( 'fw_option_type_typography_v2_standard_fonts', 'strata_filter_theme_typography_custom_fonts' );
 
 
 if ( !function_exists( 'seopress_action_shortcode_special_heading_enqueue_dynamic_css' ) ):
@@ -219,14 +219,14 @@ endif;
 
 
 
-if ( !function_exists( 'themespry_action_shortcode_column_enqueue_dynamic_css' ) ):
+if ( !function_exists( 'strata_action_shortcode_column_enqueue_dynamic_css' ) ):
 
 	/**
 	 * @internal
 	 *
 	 * @param array $data
 	 */
-	function themespry_action_shortcode_column_enqueue_dynamic_css( $data ) {
+	function strata_action_shortcode_column_enqueue_dynamic_css( $data ) {
 		$shortcode	 = 'column';
 		$atts		 = shortcode_parse_atts( $data[ 'atts_string' ] );
 
@@ -430,19 +430,19 @@ if ( !function_exists( 'themespry_action_shortcode_column_enqueue_dynamic_css' )
 	}
 
 	add_action(
-	'fw_ext_shortcodes_enqueue_static:column', 'themespry_action_shortcode_column_enqueue_dynamic_css'
+	'fw_ext_shortcodes_enqueue_static:column', 'strata_action_shortcode_column_enqueue_dynamic_css'
 	);
 endif;
 
 
-if ( !function_exists( 'themespry_action_shortcode_section_enqueue_dynamic_css' ) ):
+if ( !function_exists( 'strata_action_shortcode_section_enqueue_dynamic_css' ) ):
 
 	/**
 	 * @internal
 	 *
 	 * @param array $data
 	 */
-	function themespry_action_shortcode_section_enqueue_dynamic_css( $data ) {
+	function strata_action_shortcode_section_enqueue_dynamic_css( $data ) {
 		$shortcode				 = 'section';
 		$atts					 = shortcode_parse_atts( $data[ 'atts_string' ] );
 		$atts					 = fw_ext_shortcodes_decode_attr( $atts, $shortcode, $data[ 'post' ]->ID );
@@ -499,8 +499,8 @@ if ( !function_exists( 'themespry_action_shortcode_section_enqueue_dynamic_css' 
 					$gradient_trnsparent = $atts[ 'background_options' ][ 'image' ][ 'tab_item' ][ 'gradient11' ][ 'gradient_trnsparent' ];
 				}
 				$gradient11	 = $atts[ 'background_options' ][ 'image' ][ 'tab_item' ][ 'gradient11' ][ 'background' ];
-				$primary	 = 'rgba(' . themespry_color_rgb( $gradient11[ 'primary' ] ) . ',0.' . $gradient_trnsparent . ')';
-				$secondary	 = 'rgba(' . themespry_color_rgb( $gradient11[ 'secondary' ] ) . ',0.' . $gradient_trnsparent . ')';
+				$primary	 = 'rgba(' . strata_color_rgb( $gradient11[ 'primary' ] ) . ',0.' . $gradient_trnsparent . ')';
+				$secondary	 = 'rgba(' . strata_color_rgb( $gradient11[ 'secondary' ] ) . ',0.' . $gradient_trnsparent . ')';
 
 				$overlay = "background: $primary;background: -webkit-linear-gradient(to right, $primary, $secondary);background: -o-linear-gradient(to right, $primary, $secondary);background: -moz-linear-gradient(to right, $primary, $secondary);background: linear-gradient(to right, $primary, $secondary);";
 			}
@@ -556,7 +556,7 @@ if ( !function_exists( 'themespry_action_shortcode_section_enqueue_dynamic_css' 
 	}
 
 	add_action(
-	'fw_ext_shortcodes_enqueue_static:section', 'themespry_action_shortcode_section_enqueue_dynamic_css'
+	'fw_ext_shortcodes_enqueue_static:section', 'strata_action_shortcode_section_enqueue_dynamic_css'
 	);
 endif;
 
@@ -565,14 +565,14 @@ endif;
 
 
 
-if ( !function_exists( 'themespry_action_shortcode_space_enqueue_dynamic_css' ) ):
+if ( !function_exists( 'strata_action_shortcode_space_enqueue_dynamic_css' ) ):
 
 	/**
 	 * @internal
 	 *
 	 * @param array $data
 	 */
-	function themespry_action_shortcode_space_enqueue_dynamic_css( $data ) {
+	function strata_action_shortcode_space_enqueue_dynamic_css( $data ) {
 		$shortcode			 = 'text_block';
 		$atts				 = shortcode_parse_atts( $data[ 'atts_string' ] );
 		$atts				 = fw_ext_shortcodes_decode_attr( $atts, $shortcode, $data[ 'post' ]->ID );
@@ -604,16 +604,16 @@ if ( !function_exists( 'themespry_action_shortcode_space_enqueue_dynamic_css' ) 
 		wp_add_inline_style( 'strata-style', $custom_space_styles );
 	}
 
-	add_action( 'fw_ext_shortcodes_enqueue_static:space', 'themespry_action_shortcode_space_enqueue_dynamic_css' );
+	add_action( 'fw_ext_shortcodes_enqueue_static:space', 'strata_action_shortcode_space_enqueue_dynamic_css' );
 endif;
 
 
 
 
 
-spl_autoload_register( 'themespry_theme_includes_autoload' );
+spl_autoload_register( 'strata_theme_includes_autoload' );
 
-function themespry_theme_includes_autoload( $class ) {
+function strata_theme_includes_autoload( $class ) {
 	switch ( $class ) {
 		case 'Unyson_Google_Fonts':
 			require_once STRATA_INC . '/includes/unyson-google-fonts/class-unyson-google-fonts.php';
@@ -659,7 +659,7 @@ if ( !function_exists( 'themespryfw_theme_box_slider_population_method_custom_op
 	add_filter( 'fw_ext_box_slider_population_method_custom_options', 'themespryfw_theme_box_slider_population_method_custom_options' );
 endif;
 
-function themespry_excerpt_label( $translation, $original ) {
+function strata_excerpt_label( $translation, $original ) {
 	if ( 'Excerpt' == $original ) {
 		return esc_html__( 'Services short note', 'strata' );
 	} elseif ( false !== strpos( $original, 'Excerpts are optional hand-crafted summaries of your' ) ) {
@@ -668,39 +668,39 @@ function themespry_excerpt_label( $translation, $original ) {
 	return $translation;
 }
 
-add_filter( 'gettext', 'themespry_excerpt_label', 100, 2 );
+add_filter( 'gettext', 'strata_excerpt_label', 100, 2 );
 
-function themespry_excerpt( $num = 20 ) {
+function strata_excerpt( $num = 20 ) {
 
 	$excerpt		 = get_the_excerpt();
 	$trimmed_content = wp_trim_words( $excerpt, $num_words		 = $num, $more			 = null );
 
-	echo themespry_kses( $trimmed_content );
+	echo strata_kses( $trimmed_content );
 }
 
-function themespry_content_read_more( $num = 20 ) {
+function strata_content_read_more( $num = 20 ) {
 
 	$excerpt		 = get_the_excerpt();
 	$trimmed_content = wp_trim_words( $excerpt, $num_words		 = $num, $more			 = null );
 
-	echo themespry_kses( $trimmed_content );
+	echo strata_kses( $trimmed_content );
 	echo '</div><div class="post-footer text-right"><a href="' . get_the_permalink() . '" class="btn btn-primary">' . esc_html( 'Continue Reading', 'strata' ) . '</a>';
 }
 
 //Comment form textarea position change
 
-function themespry_move_comment_field_to_bottom( $fields ) {
+function strata_move_comment_field_to_bottom( $fields ) {
 	$comment_field		 = $fields[ 'comment' ];
 	unset( $fields[ 'comment' ] );
 	$fields[ 'comment' ] = $comment_field;
 	return $fields;
 }
 
-add_filter( 'comment_form_fields', 'themespry_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields', 'strata_move_comment_field_to_bottom' );
 
 // Displsys search form.
 
-function themespry_search_form( $form ) {
+function strata_search_form( $form ) {
 	$form = '
     <div class="search-widget">
         <form method="get" action="' . esc_url( home_url( '/' ) ) . '" id="search" class="form">
@@ -710,7 +710,7 @@ function themespry_search_form( $form ) {
     </div>';
 	return $form;
 }
-add_filter( 'get_search_form', 'themespry_search_form' );
+add_filter( 'get_search_form', 'strata_search_form' );
 
 
 

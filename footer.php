@@ -5,7 +5,7 @@
  * The template for displaying the footer.
  */
 
-$logo = themespry_get_image( 'main_logo', STRATA_IMAGES . '/logo.png' );
+$logo = strata_get_image( 'main_logo', STRATA_IMAGES . '/logo.png' );
 if ( defined( 'FW' ) ){
     //$copyright = fw_get_db_customizer_option( 'copyright_info' );
 }

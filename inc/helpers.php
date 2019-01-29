@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) )
  */
 
 // simply echos the variable
-function themespry_return( $s ) {
+function strata_return( $s ) {
 	return $s;
 }
 
@@ -20,14 +20,14 @@ function themespry_return( $s ) {
  * FOR ONE PAGE Section
  * since 1.0
  */
-function themespry_editor_data( $value ) {
+function strata_editor_data( $value ) {
 	return wp_kses_post( $value );
 }
 
 // Gets unyson option data in safe mode
 // since 1.0
 
-function themespry_get_option( $k, $v = '', $m = 'theme-settings' ) {
+function strata_get_option( $k, $v = '', $m = 'theme-settings' ) {
 	if ( defined( 'FW' ) ) {
 		switch ( $m ) {
 			case 'theme-settings':
@@ -43,14 +43,14 @@ function themespry_get_option( $k, $v = '', $m = 'theme-settings' ) {
 }
 
 // Gets unyson image url from option data in a much simple way
-// sience 1.0
+// since 1.0
 
-function themespry_get_image( $k, $v = '', $d = false ) {
+function strata_get_image( $k, $v = '', $d = false ) {
 
 	if ( $d == true ) {
 		$attachment = $k;
 	} else {
-		$attachment = themespry_get_option( $k );
+		$attachment = strata_get_option( $k );
 	}
 
 	if ( isset( $attachment[ 'url' ] ) && !empty( $attachment ) ) {
@@ -61,11 +61,11 @@ function themespry_get_image( $k, $v = '', $d = false ) {
 }
 
 /* Gets unyson image url from variable
- * sience 1.0
- * themespry_image($img, $alt )
+ * since 1.0
+ * strata_image($img, $alt )
  */
 
-function themespry_image( $img, $alt, $v = '' ) {
+function strata_image( $img, $alt, $v = '' ) {
 
 	if ( isset( $img[ 'url' ] ) && !empty( $img ) ) {
 		$i	 = $img[ 'url' ];
@@ -78,7 +78,7 @@ function themespry_image( $img, $alt, $v = '' ) {
 // Gets original page ID/ Slug
 // since 1.0
 
-function themespry_main( $id, $name = true ) {
+function strata_main( $id, $name = true ) {
 	if ( function_exists( 'icl_object_id' ) ) {
 		$id = icl_object_id( $id, 'page', true, 'en' );
 	}
@@ -93,7 +93,7 @@ function themespry_main( $id, $name = true ) {
 
 // Creates SEO friendly section ID from page ID. Returns page ID directly if $return = true
 // since 2.0
-function themespry_sectionID( $id, $returnID = false ) {
+function strata_sectionID( $id, $returnID = false ) {
 
 	if ( $returnID == false ) {
 
@@ -121,24 +121,24 @@ function themespry_sectionID( $id, $returnID = false ) {
 // Gets post's meta data in a much simplier way.
 // since 1.0
 
-function themespry_get_post_meta( $id, $needle ) {
+function strata_get_post_meta( $id, $needle ) {
 	$data = get_post_meta( $id, 'fw_options' );
 	if ( is_array( $data ) && isset( $data[ 0 ][ 'page_sections' ] ) ) {
 		$data = $data[ 0 ][ 'page_sections' ];
 
 		if ( is_array( $data ) ) {
-			return themespry_seekKey( $data, $needle );
+			return strata_seekKey( $data, $needle );
 		}
 	}
 }
 
-function themespry_seekKey( $haystack, $needle ) {
+function strata_seekKey( $haystack, $needle ) {
 	foreach ( $haystack as $key => $value ) {
 
 		if ( $key == $needle ) {
 			return $value;
 		} elseif ( is_array( $value ) ) {
-			return themespry_seekKey( $value, $needle );
+			return strata_seekKey( $value, $needle );
 		}
 	}
 }
@@ -149,9 +149,9 @@ function themespry_seekKey( $haystack, $needle ) {
  */
 //btn function
 
-if ( !function_exists( 'themespry_theme_button_class' ) ) :
+if ( !function_exists( 'strata_theme_button_class' ) ) :
 
-	function themespry_theme_button_class( $style ) {
+	function strata_theme_button_class( $style ) {
 		/**
 		 * Display specific class for buttons - depends on theme
 		 */
@@ -173,9 +173,9 @@ endif;
  * wpml compatitible
  */
 
-if ( !function_exists( 'themespry_theme_translate' ) ) :
+if ( !function_exists( 'strata_theme_translate' ) ) :
 
-	function themespry_theme_translate( $content ) {
+	function strata_theme_translate( $content ) {
 		/**
 		 * Return the content for translations plugins
 		 * @param string $content
@@ -201,9 +201,9 @@ endif;
  */
 
 // term
-if ( !function_exists( 'themespry_get_category_term_list' ) ) :
+if ( !function_exists( 'strata_get_category_term_list' ) ) :
 
-	function themespry_get_category_term_list() {
+	function strata_get_category_term_list() {
 		/**
 		 * Return array of categories
 		 */
@@ -232,7 +232,7 @@ endif;
  * Function for color RGB
  */
 
-function themespry_color_rgb( $hex ) {
+function strata_color_rgb( $hex ) {
 	$hex		 = preg_replace( "/^#(.*)$/", "$1", $hex );
 	$rgb		 = array();
 	$rgb[ 'r' ]	 = hexdec( substr( $hex, 0, 2 ) );
@@ -252,7 +252,7 @@ function themespry_color_rgb( $hex ) {
  * Since 1.0
  *  */
 
-function themespry_edit_section() {
+function strata_edit_section() {
 	?>
 	<div class="section-edit">
 		<div class="container relative">
@@ -267,10 +267,10 @@ function themespry_edit_section() {
 	<?php
 }
 
-if ( !function_exists( 'themespry_get_breadcrumbs' ) ) {
+if ( !function_exists( 'strata_get_breadcrumbs' ) ) {
 
 // breadcrumbs
-	function themespry_get_breadcrumbs( $seperator = '' ) {
+	function strata_get_breadcrumbs( $seperator = '' ) {
 		echo '<div class="breadcrumb"><ul>';
 		if ( !is_home() ) {
 			echo '<li><a href="';
@@ -348,9 +348,9 @@ add_filter( 'fw_ext_slider_activated', '_filter_theme_disable_sliders' );
 
 /* Custom WP Menu */
 
-if ( !function_exists( 'themespry_get_menu_list' ) ) {
+if ( !function_exists( 'strata_get_menu_list' ) ) {
 
-	function themespry_get_menu_list() {
+	function strata_get_menu_list() {
 		$options = array();
 		$navs	 = wp_get_nav_menus();
 		if ( is_array( $navs ) && count( $navs ) > 0 ) {
@@ -367,11 +367,11 @@ if ( !function_exists( 'themespry_get_menu_list' ) ) {
  * WP Kses Allowed HTML Tags Array
  * @Since Version 0.1
  * @param ar
- * Use: $allowed_html = themespry_allowed_html();
+ * Use: $allowed_html = strata_allowed_html();
  * wp_kses($raw_string, $allowed_html);
  * */
 
-function themespry_allowed_html() {
+function strata_allowed_html() {
 
 	$allowed_tags = array(
 		'a'					 => array(
@@ -456,10 +456,10 @@ function themespry_allowed_html() {
  * WP Kses Allowed HTML Tags Array in function
  * @Since Version 0.1
  * @param ar
- * Use: themespry_kses($raw_string);
+ * Use: strata_kses($raw_string);
  * */
 
-function themespry_kses( $raw ) {
+function strata_kses( $raw ) {
 
 	$allowed_tags = array(
 		'a'								 => array(
@@ -558,13 +558,13 @@ function custom_font_style( $style ) {
 	}
 }
 
-if ( !function_exists( 'themespry_advanced_tp_font_styles' ) ) :
+if ( !function_exists( 'strata_advanced_tp_font_styles' ) ) :
 
 	/**
 	 * Get shortcode advanced Font styles
 	 *
 	 */
-	function themespry_advanced_tp_font_styles( $style ) {
+	function strata_advanced_tp_font_styles( $style ) {
 		$font_styles = '';
 		if ( isset( $style[ 'google_font' ] ) && ($style[ 'google_font' ] === true || $style[ 'google_font' ] === 'true') ) {
 

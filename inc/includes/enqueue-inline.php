@@ -1,12 +1,12 @@
 <?php
 
-function themespry_action_tp_hook_css() {
+function strata_action_tp_hook_css() {
 	if ( defined( 'FW' ) ) {
 		$main_color		 = fw_get_db_settings_option( 'main_color' );
 		$secondary_color = fw_get_db_settings_option( 'secondary_color' );
 		$others_color = fw_get_db_settings_option( 'others_color' );
 
-		$color_hex = themespry_color_rgb( $main_color );
+		$color_hex = strata_color_rgb( $main_color );
 
 		//global font
 
@@ -14,7 +14,7 @@ function themespry_action_tp_hook_css() {
 		if ( $global_body_font[ 'family' ] != 'gilroylight' || $global_body_font[ 'family' ] != 'gilroyextrabold' ) {
 			Unyson_Google_Fonts::add_typography_v2( fw_get_db_settings_option( 'body_font' ) );
 		}
-		$body_font = themespry_advanced_tp_font_styles( fw_get_db_settings_option( 'body_font' ) );
+		$body_font = strata_advanced_tp_font_styles( fw_get_db_settings_option( 'body_font' ) );
 
 
 
@@ -25,24 +25,24 @@ function themespry_action_tp_hook_css() {
 
 
 
-		$global_title = themespry_advanced_tp_font_styles( fw_get_db_settings_option( 'heading_title' ) );
+		$global_title = strata_advanced_tp_font_styles( fw_get_db_settings_option( 'heading_title' ) );
 
 		Unyson_Google_Fonts::add_typography_v2( fw_get_db_settings_option( 'extra_fonts' ) );
 		Unyson_Google_Fonts::add_typography_v2( fw_get_db_settings_option( 'extra_fonts_2' ) );
-		$global_subtitle = themespry_advanced_tp_font_styles( fw_get_db_settings_option( 'extra_fonts' ) );
+		$global_subtitle = strata_advanced_tp_font_styles( fw_get_db_settings_option( 'extra_fonts' ) );
 
 		//top bar bg color
-		$top_color		 = themespry_get_option( 'topbar_menu_color' );
+		$top_color		 = strata_get_option( 'topbar_menu_color' );
 		$top_bg_color	 = $top_color != '' ? '#top-bar{background:' . $top_color . '}' : '';
 		
 
-		$top_txt_color	 = themespry_get_option( 'topbar_text_color' );
+		$top_txt_color	 = strata_get_option( 'topbar_text_color' );
 		$top_text_color	 = $top_txt_color != '' ? '#top-bar ul > li > a, #top-bar i, #top-bar .top-info p, #top-bar .top-info i{color:' . $top_txt_color . '}' : '';
 
 		$menu_bg_color	 = '';
 		//Menu bg color
-		$menu_color		 = themespry_get_option( 'main_menu_color' );
-		$menu			 = themespry_get_option( 'mainmenu_style' );
+		$menu_color		 = strata_get_option( 'main_menu_color' );
+		$menu			 = strata_get_option( 'mainmenu_style' );
 		if ( $menu_color != '' ) {
 
 			if ( $menu[ 'menu_style' ] == 'menu-1' ) {
@@ -57,14 +57,14 @@ function themespry_action_tp_hook_css() {
 			}
 		}
 
-		$menu_txt_color	 = themespry_get_option( 'menu_text_color' );
+		$menu_txt_color	 = strata_get_option( 'menu_text_color' );
 		$menu_text_color = $menu_txt_color != '' ? 'ul.main-menu>li>a, .nav-search, .header-standard ul.navbar-nav > li > a{color:' . $menu_txt_color . '}' : '';
 
 
 
 		//Footer style
 		$footer_widgets_background	 = $footer_overlay				 = $widget_text_color			 = '';
-		$footer_widgets				 = themespry_get_option( 'footer_widget' );
+		$footer_widgets				 = strata_get_option( 'footer_widget' );
 
 		if ( $footer_widgets[ 'footer_bg' ] == 'yes' ) {
 			$widgets_settings = $footer_widgets[ 'yes' ][ 'footer_bg_setting' ];
@@ -82,14 +82,14 @@ function themespry_action_tp_hook_css() {
 
 
 		//	copyright_bgcolor
-		$footer_bg_color	 = themespry_get_option( 'footer_bg_color' );
+		$footer_bg_color	 = strata_get_option( 'footer_bg_color' );
 		$footer_bg_copyright = $footer_bg_color != '' ? '.copyright{background:' . $footer_bg_color . '}' : '';
 
 
 
-		$copyright_text_color	 = themespry_get_option( 'footer_text_color' );
+		$copyright_text_color	 = strata_get_option( 'footer_text_color' );
 		//custom css
-		$custom_css				 = themespry_get_option( 'custom_css' );
+		$custom_css				 = strata_get_option( 'custom_css' );
 		$output					 = "h1, h2, h3, h4, h5, h6, .fw-special-title{ $global_title }"
 		. ".fw-special-subtitle, .fw-contact-form-description, .team-member h5{ $global_subtitle }"
 		. "body{ $body_font }.colorsbg, .separator, .separator-left, .separator, .preloader {background: $main_color;}"
@@ -145,6 +145,6 @@ function themespry_action_tp_hook_css() {
 	wp_add_inline_script( 'strata-form-helpers', 'var adminAjax = "' . admin_url( 'admin-ajax.php' ) . '"' );
 }
 
-add_action( 'wp_enqueue_scripts', 'themespry_action_tp_hook_css', 90 );
+add_action( 'wp_enqueue_scripts', 'strata_action_tp_hook_css', 90 );
 
 

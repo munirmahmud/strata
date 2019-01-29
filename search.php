@@ -26,7 +26,7 @@ get_header(); ?>
                     while ( have_posts() ) : the_post();
                         get_template_part( 'template-parts/post/content', get_post_format() );
                     endwhile;
-                    themespry_paging_nav();
+                    strata_paging_nav();
                 else :
                     get_template_part( 'template-parts/post/content', 'none' );
                 endif;

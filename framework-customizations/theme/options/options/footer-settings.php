@@ -104,7 +104,7 @@ $options = array(
 										'two'	 => array(
 											'title'		 => array(
 												'label'	 => esc_html__( 'Subscribe Title', 'strata' ),
-												'value'	 => themespry_kses( 'Subscribe to <span class="title-text-color">our newsletter</span>', 'strata' ),
+												'value'	 => strata_kses( 'Subscribe to <span class="title-text-color">our newsletter</span>', 'strata' ),
 												'desc'	 => esc_html__( 'Enter the top subscribe title', 'strata' ),
 												'type'	 => 'text',
 											),

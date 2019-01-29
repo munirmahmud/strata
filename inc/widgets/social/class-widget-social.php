@@ -9,7 +9,7 @@ class Strata_social extends WP_Widget {
 
 	function __construct() {
 		$widget_opt = array(
-			'classname'		 => 'themespry_widget',
+			'classname'		 => 'strata_widget',
 			'description'	 => 'strata Social'
 		);
 
@@ -19,10 +19,10 @@ class Strata_social extends WP_Widget {
 	function widget( $args, $instance ) {
 		global $wp_query;
 
-		echo themespry_return( $args[ 'before_widget' ] );
+		echo strata_return( $args[ 'before_widget' ] );
 		if ( !empty( $instance[ 'title' ] ) ) {
 
-			echo themespry_return( $args[ 'before_title' ] ) . apply_filters( 'widget_title', $instance[ 'title' ] ) . themespry_return( $args[ 'after_title' ] );
+			echo strata_return( $args[ 'before_title' ] ) . apply_filters( 'widget_title', $instance[ 'title' ] ) . strata_return( $args[ 'after_title' ] );
 		}
 
 		$facebook			 = '';
@@ -172,7 +172,7 @@ class Strata_social extends WP_Widget {
 		</div><!-- Footer social end -->
 
 		<?php
-		echo themespry_return( $args[ 'after_widget' ] );
+		echo strata_return( $args[ 'after_widget' ] );
 	}
 
 	function update( $old_instance, $new_instance ) {

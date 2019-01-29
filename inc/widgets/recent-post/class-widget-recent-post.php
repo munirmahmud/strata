@@ -10,7 +10,7 @@ class Strata_recent_post extends WP_Widget {
 	function __construct() {
 
 		$widget_opt = array(
-			'classname'		 => 'themespry_widget',
+			'classname'		 => 'strata_widget',
 			'description'	 => 'Recent Post With Thumbnail'
 		);
 
@@ -21,11 +21,11 @@ class Strata_recent_post extends WP_Widget {
 
 		global $wp_query;
 
-		echo themespry_return($args[ 'before_widget' ]);
+		echo strata_return($args[ 'before_widget' ]);
 
 		if ( !empty( $instance[ 'title' ] ) ) {
 
-			echo themespry_return($args[ 'before_title' ]) . apply_filters( 'widget_title', $instance[ 'title' ] ) . themespry_return($args[ 'after_title' ]);
+			echo strata_return($args[ 'before_title' ]) . apply_filters( 'widget_title', $instance[ 'title' ] ) . strata_return($args[ 'after_title' ]);
 		}
 
 		if ( !empty( $instance[ 'number_of_posts' ] ) ) {
@@ -79,7 +79,7 @@ class Strata_recent_post extends WP_Widget {
 		</ul>
 		<?php
 		wp_reset_postdata();
-		echo themespry_return($args[ 'after_widget' ]);
+		echo strata_return($args[ 'after_widget' ]);
 	}
 
 	function update( $new_instance, $old_instance ) {

@@ -43,7 +43,7 @@ get_header(); ?>
                         <?php get_template_part('template-parts/post/content', get_post_format()); ?>
                     <?php endwhile; ?>
 
-                    <?php themespry_paging_nav(); ?>
+                    <?php strata_paging_nav(); ?>
 
                 <?php else : ?>
                     <?php get_template_part('template-parts/post/content', 'none'); ?>

@@ -8,7 +8,7 @@ class Strata_Contact extends WP_Widget
 {
     function __construct() {
         $widget_opt = array(
-            'classname'     => 'themespry_widget',
+            'classname'     => 'strata_widget',
             'description'   => 'Strata Contact'
         );
         
@@ -18,10 +18,10 @@ class Strata_Contact extends WP_Widget
     function widget( $args, $instance ){
     	global $wp_query;
         
-        echo themespry_return($args['before_widget']);
+        echo strata_return($args['before_widget']);
         if ( !empty( $instance[ 'title' ] ) ) {
 
-            echo themespry_return($args[ 'before_title' ]) . apply_filters( 'widget_title', $instance[ 'title' ] ) . themespry_return($args[ 'after_title' ]);
+            echo strata_return($args[ 'before_title' ]) . apply_filters( 'widget_title', $instance[ 'title' ] ) . strata_return($args[ 'after_title' ]);
         }
 
         $address = '';
@@ -78,7 +78,7 @@ class Strata_Contact extends WP_Widget
 
         </div>    
         <?php
-        echo themespry_return($args['after_widget']);
+        echo strata_return($args['after_widget']);
     }
     
     

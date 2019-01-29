@@ -12,7 +12,7 @@
 		<div class="post-thumbnail">
 			<?php
 			the_post_thumbnail( 'post-thumbnails' );
-			themespry_post_meta_date();
+			strata_post_meta_date();
 			?>
 		</div>
 	<?php endif; ?>
@@ -34,14 +34,14 @@
 			} else {
 				the_content( esc_html__( 'Continue reading &rarr;', 'strata' ) );
 
-				themespry_link_pages();
+				strata_link_pages();
 			}
 			?>
 		</div> <!-- end entry-content -->
 
 		<?php
-            //themespry_single_post_footer
-            themespry_single_post_footer();
+            //strata_single_post_footer
+            strata_single_post_footer();
 
             $author_setting = '';
             if( defined('FW')){

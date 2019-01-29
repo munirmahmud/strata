@@ -47,9 +47,9 @@ if (!isset($content_width)) {
  * 3.0 - Sets up theme defaults and registers support for various WordPress features.
  * ----------------------------------------------------------------------------------------
  */
-if ( !function_exists('themespry_setup')) {
+if ( !function_exists('strata_setup')) {
 
-    function themespry_setup() {
+    function strata_setup() {
 	/**
 	 * Make the theme available for translation.
 	 */
@@ -122,7 +122,7 @@ if ( !function_exists('themespry_setup')) {
 
     }
 
-    add_action('after_setup_theme', 'themespry_setup');
+    add_action('after_setup_theme', 'strata_setup');
 }
 
 /**

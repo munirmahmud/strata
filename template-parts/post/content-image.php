@@ -25,18 +25,18 @@
 
     <div class="entry-content">
 
-        <?php themespry_post_meta_left(); ?>
+        <?php strata_post_meta_left(); ?>
         <!-- Post meta left -->
 
         <div class="entry-header">
-            <?php themespry_post_meta(); ?>
+            <?php strata_post_meta(); ?>
         </div><!-- header end -->
 
         <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
         <div class="post-content">
             <?php
-            themespry_content_read_more( '35' );
+            strata_content_read_more( '35' );
             ?>
         </div>
     </div><!-- /.entry-content -->

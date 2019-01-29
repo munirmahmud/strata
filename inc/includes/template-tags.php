@@ -11,12 +11,12 @@
  * 6.0 - Display navigation to the next/previous set of posts.
  * ----------------------------------------------------------------------------------------
  */
-if ( !function_exists( 'themespry_post_nav' ) ) :
+if ( !function_exists( 'strata_post_nav' ) ) :
 
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function themespry_post_nav() {
+	function strata_post_nav() {
 // Don't print empty markup if there's nowhere to navigate.
 		//$previous	 = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		//$next		 = get_adjacent_post( false, '', false );
@@ -125,9 +125,9 @@ if ( !function_exists( 'tp_post_meta_info' ) ) {
 }
 
 
-if ( !function_exists( 'themespry_post_meta_date' ) ) {
+if ( !function_exists( 'strata_post_meta_date' ) ) {
 
-	function themespry_post_meta_date() {
+	function strata_post_meta_date() {
 		if ( get_post_type() === 'post' ) {
 
 			echo '<span class="post-meta-date meta-date"><span class="day">' . get_the_date( 'm' ) . '</span>' . get_the_date( 'M' ) . '</span>';
@@ -148,9 +148,9 @@ if ( !function_exists( 'themespry_post_meta_date' ) ) {
  * 6.0 - Display navigation to the next/previous set of posts.
  * ----------------------------------------------------------------------------------------
  */
-if ( !function_exists( 'themespry_paging_nav' ) ) {
+if ( !function_exists( 'strata_paging_nav' ) ) {
 
-	function themespry_paging_nav() {
+	function strata_paging_nav() {
 
 
 		if ( is_singular() )
@@ -232,9 +232,9 @@ if ( !function_exists( 'themespry_paging_nav' ) ) {
  * 7.0 - footer tags with social share
  * ----------------------------------------------------------------------------------------
  */
-if ( !function_exists( 'themespry_single_post_footer' ) ) {
+if ( !function_exists( 'strata_single_post_footer' ) ) {
 
-	function themespry_single_post_footer() {
+	function strata_single_post_footer() {
 		?>
 
 
@@ -245,14 +245,14 @@ if ( !function_exists( 'themespry_single_post_footer' ) ) {
 		if ( $tag_list ) {
 			echo '<div class="post-tags pull-left">' . "\n";
 			echo ' <strong>' . esc_html_e( 'Tags', 'strata' ) . ': </strong>' . "\n";
-			echo themespry_kses( $tag_list );
+			echo strata_kses( $tag_list );
 			echo '</div>' . "\n";
 		}
 		?>
 		<div class="share-items pull-right">
 			<?php
-			if ( function_exists( 'themespry_social_share' ) ) {
-				themespry_social_share();
+			if ( function_exists( 'strata_social_share' ) ) {
+				strata_social_share();
 			}
 			?>
 
@@ -263,7 +263,7 @@ if ( !function_exists( 'themespry_single_post_footer' ) ) {
 
 }
 
-function themespry_tp_comment_style( $comment, $args, $depth ) {
+function strata_tp_comment_style( $comment, $args, $depth ) {
 	if ( 'div' === $args[ 'style' ] ) {
 		$tag		 = 'div';
 		$add_below	 = 'comment';
@@ -278,7 +278,7 @@ function themespry_tp_comment_style( $comment, $args, $depth ) {
 	}
 	?>
 	<<?php
-	echo themespry_kses( $tag );
+	echo strata_kses( $tag );
 	comment_class( empty( $args[ 'has_children' ] ) ? '' : 'parent'  );
 	?> id="comment-<?php comment_ID() ?>"><?php if ( 'div' != $args[ 'style' ] ) { ?>
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php }
@@ -298,7 +298,7 @@ function themespry_tp_comment_style( $comment, $args, $depth ) {
 
 
 			<span class="comment-author vcard"><?php
-				printf( themespry_kses( '<cite class="fn">%s</cite> <span class="says">%s</span>', 'strata' ), get_comment_author_link(), esc_html__( 'says:', 'strata' ) );
+				printf( strata_kses( '<cite class="fn">%s</cite> <span class="says">%s</span>', 'strata' ), get_comment_author_link(), esc_html__( 'says:', 'strata' ) );
 				?>
 			</span>
 			<?php if ( $comment->comment_approved == '0' ) { ?>
@@ -323,7 +323,7 @@ function themespry_tp_comment_style( $comment, $args, $depth ) {
 	endif;
 }
 
-function themespry_link_pages() {
+function strata_link_pages() {
 	$args = array(
 		'before'			 => '<div class="page-links"><span class="page-link-text">' . esc_html__( 'More pages: ', 'strata' ) . '</span>',
 		'after'				 => '</div>',
